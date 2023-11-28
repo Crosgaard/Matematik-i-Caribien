@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://bt6gyqyqtqupo"]
+
+[ext_resource type="Texture2D" uid="uid://b01ps11i7jvhh" path="res://Graphics/Backgrounds/minigame.png" id="1_ea2cu"]
+[ext_resource type="Texture2D" uid="uid://citm6vvc8wv1s" path="res://Graphics/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_ajij2"]
+
+[node name="Minigame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -94.0
+offset_right = 136.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.8)
+texture = ExtResource("1_ea2cu")
+stretch_mode = 6
+
+[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.502
+anchor_right = 0.273
+anchor_bottom = 0.971
+offset_top = 0.13797
+offset_right = -1.89999
+offset_bottom = -83.5011
+scale = Vector2(1, 1.3)
+texture = ExtResource("2_ajij2")
