@@ -1,0 +1,11 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvk2vrcrj7sku"]
+
+[ext_resource type="PackedScene" uid="uid://bt6gyqyqtqupo" path="res://Scenes/Levels/minigame.tscn" id="1_d1pwt"]
+[ext_resource type="Script" path="res://Scenes/Levels/MinigameKløft.gd" id="2_nvifs"]
+[ext_resource type="Texture2D" uid="uid://hggggkvkyk1" path="res://Graphics/Pirate Bomb/Sprites/4-Enemy-Big Guy/1-Idle/1.png" id="3_1x3av"]
+
+[node name="Minigame" instance=ExtResource("1_d1pwt")]
+script = ExtResource("2_nvifs")
+
+[node name="Asker" parent="Background" index="1"]
+texture = ExtResource("3_1x3av")

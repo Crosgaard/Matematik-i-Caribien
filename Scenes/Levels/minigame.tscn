@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bt6gyqyqtqupo"]
+[gd_scene load_steps=5 format=3 uid="uid://bt6gyqyqtqupo"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/minigame.gd" id="1_6av4c"]
 [ext_resource type="Texture2D" uid="uid://b01ps11i7jvhh" path="res://Graphics/Backgrounds/minigame.png" id="1_ea2cu"]
 [ext_resource type="Texture2D" uid="uid://citm6vvc8wv1s" path="res://Graphics/Pirate Bomb/Sprites/1-Player-Bomb Guy/1-Idle/1.png" id="2_ajij2"]
+[ext_resource type="Texture2D" uid="uid://dk4jwbbk6ojk5" path="res://Graphics/speech_bubble.png" id="5_53kwa"]
 
 [node name="Minigame" type="Control"]
 layout_mode = 3
@@ -10,8 +12,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6av4c")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,7 +29,7 @@ scale = Vector2(0.9, 0.8)
 texture = ExtResource("1_ea2cu")
 stretch_mode = 6
 
-[node name="TextureRect" type="TextureRect" parent="TextureRect"]
+[node name="Player" type="TextureRect" parent="Background"]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.502
@@ -37,3 +40,81 @@ offset_right = -1.89999
 offset_bottom = -83.5011
 scale = Vector2(1, 1.3)
 texture = ExtResource("2_ajij2")
+
+[node name="Asker" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.658
+anchor_top = 0.434
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.155579
+offset_top = -0.304077
+offset_right = 0.555664
+offset_bottom = -125.25
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(1, 1.3)
+flip_h = true
+
+[node name="AskerBubble" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 0.07
+anchor_right = 0.833
+anchor_bottom = 0.671
+offset_left = 56.0667
+offset_top = -56.42
+offset_right = 56.7667
+offset_bottom = -55.951
+texture = ExtResource("5_53kwa")
+flip_h = true
+
+[node name="Label" type="Label" parent="Background/AskerBubble"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.2222
+offset_top = 67.75
+offset_right = -77.7778
+offset_bottom = -176.25
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+text = "This is some text for testing how it looks to have a bunch oof text in a box
+"
+autowrap_mode = 2
+
+[node name="PlayerBubble" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.462
+anchor_top = 0.07
+anchor_right = 0.833
+anchor_bottom = 0.671
+offset_left = -418.378
+offset_top = 121.08
+offset_right = -465.678
+offset_bottom = -66.451
+texture = ExtResource("5_53kwa")
+
+[node name="Label" type="TextEdit" parent="Background/PlayerBubble"]
+layout_mode = 0
+offset_left = 41.0
+offset_top = 80.0
+offset_right = 394.0
+offset_bottom = 258.0
+theme_override_colors/background_color = Color(0, 0, 0, 0)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Tryk her for at svare"
+selecting_enabled = false
+
+[connection signal="focus_entered" from="Background/PlayerBubble/Label" to="." method="_on_label_focus_entered"]
+[connection signal="mouse_entered" from="Background/PlayerBubble/Label" to="." method="_on_label_mouse_entered"]
+[connection signal="mouse_exited" from="Background/PlayerBubble/Label" to="." method="_on_label_mouse_exited"]
+[connection signal="text_changed" from="Background/PlayerBubble/Label" to="." method="_on_label_text_changed"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dmxgyjp22myk6"]
+
+[ext_resource type="PackedScene" uid="uid://bt6gyqyqtqupo" path="res://Scenes/Levels/minigame.tscn" id="1_h1aty"]
+[ext_resource type="Script" path="res://Scenes/Levels/minigame_tag.gd" id="2_4e0vn"]
+[ext_resource type="Texture2D" uid="uid://u0cjc3lk8gya" path="res://Graphics/Pirate Bomb/Sprites/2-Enemy-Bald Pirate/1-Idle/1.png" id="3_7mvgc"]
+
+[node name="Minigame" instance=ExtResource("1_h1aty")]
+script = ExtResource("2_4e0vn")
+
+[node name="Asker" parent="Background" index="1"]
+anchor_left = 0.72
+anchor_top = 0.536
+offset_left = -6.10352e-05
+offset_top = -0.0160217
+offset_right = 0.0
+offset_bottom = -103.0
+texture = ExtResource("3_7mvgc")
+
+[node name="AskerBubble" parent="Background" index="2"]
+offset_left = 59.4
+offset_top = 11.08
+offset_right = 60.1
+offset_bottom = 11.549
